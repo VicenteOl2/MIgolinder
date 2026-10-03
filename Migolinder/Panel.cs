@@ -37,5 +37,25 @@ namespace Migolinder
         {
             AbrirFormHija(new FrmDashBoard());
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new FrmReportes());
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+         
+            Login frmLogin = new Login();
+            frmLogin.Show();
+
+            this.Hide();
+        }
     }
 }

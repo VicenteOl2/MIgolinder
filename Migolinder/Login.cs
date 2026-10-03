@@ -64,8 +64,14 @@ namespace Migolinder
             {
                 MessageBox.Show("¡Bienvenido al sistema de Minder Construcciones!", "Acceso Concedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // NOTA PARA EL FUTURO: Aquí pondremos el código para ocultar este Login 
-                // y abrir la ventana del Panel Principal que está armando Vicente.
+                // 1. Crear la instancia del formulario Panel
+                Panel menuPrincipal = new Panel();
+
+                // 2. Mostrar la ventana principal (Panel)
+                menuPrincipal.Show();
+
+                // 3. Ocultar el formulario de Login actual
+                this.Hide();
             }
             else
             {
