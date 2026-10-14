@@ -35,7 +35,7 @@ namespace Migolinder
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AbrirFormHija(new FrmDashBoard());
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
