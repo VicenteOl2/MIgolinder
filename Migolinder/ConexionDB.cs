@@ -6,7 +6,8 @@ namespace Migolinder
 {
     public static class ConexionBD
     {
-        // Cadena directa con credenciales de Clever Cloud y parámetros de seguridad MySQL 8
+        // TODO URGENTE (Mañana): Mover esta cadena al archivo App.config dentro de <connectionStrings>.
+        // Subir credenciales duras a GitHub es un riesgo crítico de seguridad.
         private static readonly string CadenaConexion =
             "Server=bfes4mrrgwzpspgsb9j9-mysql.services.clever-cloud.com;" +
             "Port=3306;" +
@@ -14,7 +15,8 @@ namespace Migolinder
             "Uid=u3p2t4fyeyhaf1ee;" +
             "Pwd=xOVS3edCNPheeYfZw7kz;" +
             "SslMode=Required;" +
-            "AllowPublicKeyRetrieval=True;";
+            "AllowPublicKeyRetrieval=True;" +
+            "Connection Timeout=30;"; // Añadido: 30 segundos de espera para compensar el ping hacia París.
 
         public static MySqlConnection ObtenerConexion()
         {
@@ -26,6 +28,8 @@ namespace Migolinder
         public static DataTable CargarDatos(string consultaSql)
         {
             DataTable tabla = new DataTable();
+
+            // TODO (Mañana): Manejar excepciones de red aquí con try/catch en caso de caída del servidor.
             using (var con = ObtenerConexion())
             using (var cmd = new MySqlCommand(consultaSql, con))
             using (var adapter = new MySqlDataAdapter(cmd))
