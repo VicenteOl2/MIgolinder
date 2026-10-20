@@ -37,6 +37,10 @@ namespace Migolinder
         {
             
         }
+        public void SetUsuario(string nombreUsuario)
+        {
+            lblUsuario.Text = "Bienvenido al sistema de gestion Usuario: " + nombreUsuario;
+        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
